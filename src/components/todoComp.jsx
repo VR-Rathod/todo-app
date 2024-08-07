@@ -1,4 +1,4 @@
-import { useState , useRef } from "react";
+import { useRef } from "react";
 
 function AddTodo({ onNewItem }) {
   const todoNameElement = useRef(0);
@@ -7,8 +7,9 @@ function AddTodo({ onNewItem }) {
   const handleAddButtonClick = (event) => {
     event.preventDefault();
     const todoName = todoNameElement.current.value;
-    const dueDate = dueDate.current.value;
-    console.log('${todoName} Due on: ${dueDate}');
+    const dueDate = dueDateElement.current.value;
+    todoNameElement.current.value = "";
+    dueDateElement.current.value = "";
     onNewItem(todoName, dueDate);
   };
 
@@ -18,16 +19,13 @@ function AddTodo({ onNewItem }) {
         <div className="col-6">
           <input
             type="text"
-            value={todoName}
             ref={todoNameElement}
             placeholder="Enter Todo Here"
           />
         </div>
 
         <div className="col-4">
-          <input type="date" 
-          value={dueDate}
-          ref={dueDateElement} />
+          <input type="date" ref={dueDateElement} />
         </div>
 
         <div className="col-2">
