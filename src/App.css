@@ -1,0 +1,21 @@
+input {
+    width: 100%;
+}
+
+.items-container{
+    text-align: left;
+}
+
+.vg-row{
+    margin: 28px 5px;
+}
+
+.vg-btn{
+    min-width: 100px;
+}
+
+p{
+    text-align: center;
+    font-size: larger;
+    font-weight: 600;
+}
